@@ -1,0 +1,24 @@
+.answer-container {
+  display: flex;
+}
+
+.answer-label {
+  display: flex;
+  gap: 4px;
+  border-radius: 2px;
+  border: 1px solid #9bbdb2;
+  background-color: #d6eee6;
+  padding: 8px;
+  transition-property: border-color;
+  transition-duration: .2s;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: #538676;
+    }
+  }
+
+  .radio-input:checked + & {
+    background-color: #9ac0b4;
+  }
+}

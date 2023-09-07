@@ -1,0 +1,18 @@
+.home-container {
+  display: grid;
+  gap: 24px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 0;
+}
+
+.home-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.questions-container {
+  display: grid;
+  gap: 16px;
+}

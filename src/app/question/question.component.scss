@@ -1,0 +1,19 @@
+.question-container {
+  display: grid;
+  gap: 16px;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: #fff;
+  padding: 16px;
+}
+
+.answers-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.answers-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}

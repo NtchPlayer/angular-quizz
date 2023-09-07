@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap);
+
+html{
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: #f9f9fb;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--neutral-color-7);
+  text-rendering : optimizeLegibility;
+  font-synthesis: none;
+  direction: ltr;
+}
