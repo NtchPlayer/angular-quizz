@@ -1,0 +1,150 @@
+{
+  "questions": [
+    {
+      "name": "virtualisation",
+      "title": "Combient de personnages peuvent être virtualisé ?",
+      "answers": [
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "4",
+          "value": 4
+        },
+        {
+          "label": "5",
+          "value": 5
+        },
+        {
+          "label": "6",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "title": "Quel est la première version de l'IFSCL sous Unity ?",
+      "name": "first-version",
+      "answers": [
+        {
+          "label": "Version 2.4.8",
+          "value": 248
+        },
+        {
+          "label": "Version 2.6.2",
+          "value": 262
+        },
+        {
+          "label": "Version 3.0.0",
+          "value": 300
+        },
+        {
+          "label": "Version 3.0.1",
+          "value": 301
+        }
+      ]
+    },
+    {
+      "title": "Quel territoire possède l'identifiant numéro 1 ?",
+      "name": "sector-id",
+      "answers": [
+        {
+          "label": "Montagne",
+          "value": "mountain"
+        },
+        {
+          "label": "Désert",
+          "value": "desert"
+        },
+        {
+          "label": "Forêt",
+          "value": "forest"
+        },
+        {
+          "label": "Banquise",
+          "value": "ice"
+        }
+      ]
+    },
+    {
+      "title": "Dans quelle version a été ajouté la première Immu's Room ?",
+      "name": "immu-room",
+      "answers": [
+        {
+          "label": "Version 1.8.8",
+          "value": 188
+        },
+        {
+          "label": "Version 2.0.5",
+          "value": 205
+        },
+        {
+          "label": "Version 2.4.2",
+          "value": 242
+        },
+        {
+          "label": "Version 3.0.1",
+          "value": 301
+        }
+      ]
+    },
+    {
+      "title": "Quel commande permet de sélectionner une tour sur le superscan",
+      "name": "superscan",
+      "answers": [
+        {
+          "label": "superscan.cartage.2",
+          "value": "superscan.cartage.2"
+        },
+        {
+          "label": "superscan.to.banquise.1",
+          "value": "superscan.to.banquise.1"
+        },
+        {
+          "label": "superscan.hmap",
+          "value": "superscan.hmap"
+        },
+        {
+          "label": "superscan.foret.3",
+          "value": "superscan.foret.3"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "userName": "IcePlayer",
+      "email": "nathanchevalet@orange.fr",
+      "password": "Motdepasse1!",
+      "id": 1
+    },
+    {
+      "userName": "Xubeo",
+      "email": "lucas@leplusbeau.com",
+      "password": "Motdepasse1!",
+      "id": 2
+    }
+  ],
+  "answers": [
+    {
+      "questionId": 0,
+      "value": 5
+    },
+    {
+      "questionId": 1,
+      "value": 262
+    },
+    {
+      "questionId": 2,
+      "value": "mountain"
+    },
+    {
+      "questionId": 3,
+      "value": 205
+    },
+    {
+      "questionId": 4,
+      "value": "superscan.foret.3"
+    }
+  ]
+}

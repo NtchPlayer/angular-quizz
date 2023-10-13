@@ -16,3 +16,39 @@ body{
   font-synthesis: none;
   direction: ltr;
 }
+
+.heading-1 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.page-container {
+  display: grid;
+  gap: 24px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px;
+}
+
+.form-container {
+  display: grid;
+  gap: 16px;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 16px;
+}
+
+.link-button {
+  display: inline-block;
+  border-radius: 2px;
+  background-color: #169ad3;
+  padding: 8px;
+  color: #fff;
+
+  &.secondary {
+    border: 1px solid #169ad3;
+    background-color: unset;
+  }
+}
+

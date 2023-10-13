@@ -1,9 +1,15 @@
 <article class="question-container">
-  <h2 class="answers-title">Combient de personnages peuvent être virtualisé ?</h2>
+  <h2 class="answers-title">{{ title }}</h2>
   <div class="answers-container">
-    <app-checkbox></app-checkbox>
-    <app-checkbox></app-checkbox>
-    <app-checkbox></app-checkbox>
-    <app-checkbox></app-checkbox>
+    <app-checkbox
+      *ngFor="let answer of answers; index as i"
+      [label]="answer.label"
+      [value]="answer.value"
+      [questionId]="id"
+      [name]="name"
+      [id]="i"
+      [(selected)]="selected"
+      (selectedChange)="propagateChange($event)"
+    ></app-checkbox>
   </div>
 </article>

@@ -1,10 +1,9 @@
-<main class="home-container">
-  <h1 class="home-title">{{ title }}</h1>
-  <div class="questions-container">
-    <app-question></app-question>
-    <app-question></app-question>
-    <app-question></app-question>
-    <app-question></app-question>
-    <app-question></app-question>
-  </div>
+<main class="page-container">
+  <h1 class="heading-1">Quiz IFSCL</h1>
+  <p>Ce quiz à pour objectif de tester vos connaissance sur l'IFSCL, un fan-game sur basant sur l'univers de Code Lyoko.</p>
+  <p>
+    <a [routerLink]="['/quiz']" class="link-button">
+      Commencer le quiz
+    </a>
+  </p>
 </main>

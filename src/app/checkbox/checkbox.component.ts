@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-checkbox',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./checkbox.component.scss']
 })
 export class CheckboxComponent {
+  @Input() label!: string;
+  @Input() value!: string | number;
+  @Input() questionId!: number;
+  @Input() id!: number;
+  @Input() selected!: number | string;
+  @Input() name!: string;
 
+  @Output() selectedChange = new EventEmitter<number | string>();
 }
