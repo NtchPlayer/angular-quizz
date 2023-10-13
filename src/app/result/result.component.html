@@ -1,0 +1,9 @@
+<main class="page-container">
+  <h1 class="heading-1">Résultat</h1>
+  <p>Vous avez obtenu un score de: <span class="result-score">{{ quizService.result }}/{{ quizService.total }}</span></p>
+  <p>
+    <a [routerLink]="['/']" class="link-button">
+      Recommencer le quiz
+    </a>
+  </p>
+</main>

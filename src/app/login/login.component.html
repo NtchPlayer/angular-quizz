@@ -1,0 +1,11 @@
+<main class="page-container">
+  <h1 class="heading-1">Connexion</h1>
+  <form id="login-form" [formGroup]="loginForm" class="form-container" (submit)="login()">
+    <app-input-field name="register-email" type="email" placeholder="example@email.com" label="Adresse mail" formControlName="email" />
+    <app-input-field name="register-password" type="password" placeholder="password" label="Mot de passe" formControlName="password" />
+    <p *ngIf="authService.error" class="login-error">Identifiant ou mot de passe invalide</p>
+    <app-button type="submit" [disabled]="!loginForm.valid">
+      Se connecter
+    </app-button>
+  </form>
+</main>

@@ -1,0 +1,19 @@
+<main class="page-container">
+  <h1 class="heading-1">{{ title }}</h1>
+  <form id="quiz-form" [formGroup]="quizForm" class="questions-container"  (submit)="checkAnswer()">
+    <app-question
+      *ngFor="let question of questions; index as i"
+      [title]="question.title"
+      [name]="question.name"
+      [answers]="question.answers"
+      [answer]="question.answer"
+      [id]="i"
+      [formControlName]="i"
+    />
+    <p class="quiz-send-button-container">
+      <app-button type="submit" [disabled]="!quizForm.valid">
+        Envoyer vos réponse
+      </app-button>
+    </p>
+  </form>
+</main>

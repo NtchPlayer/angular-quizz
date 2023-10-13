@@ -1,0 +1,13 @@
+<header class="header-wrapper">
+  <div class="page-container header-container">
+    <h3 class="header-title">IFSCL Quiz</h3>
+    <div *ngIf="!authService.user" class="header-link-container">
+      <a [routerLink]="['/login']" class="link-button">Se connecter</a>
+      <a [routerLink]="['/register']" class="link-button secondary">S'inscrire</a>
+    </div>
+    <div *ngIf="authService.user" class="header-link-container">
+      <p>{{ authService.user.userName }}</p>
+      <app-button (click)="authService.logout()" variation="secondary">Déconnexion</app-button>
+    </div>
+  </div>
+</header>

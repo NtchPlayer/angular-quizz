@@ -1,0 +1,45 @@
+.button-container {
+  padding: 12px;
+  border-radius: 2px;
+  font-weight: 600;
+  color: #fff;
+
+  &.primary {
+    background-color: #42a8e7;
+    transition-duration: .1s;
+    transition-property: background-color;
+
+    &[disabled] {
+      background-color: #a4a4a4;
+      cursor: not-allowed;
+    }
+
+    &:hover:not([disabled]) {
+      background-color: #5eb1e5;
+    }
+
+    &:active:not([disabled]) {
+      background-color: #77b8e1;
+    }
+  }
+
+  &.secondary {
+    border: 1px solid #42a8e7;
+    transition-duration: .1s;
+    transition-property: background-color;
+    padding: 8px;
+
+    &[disabled] {
+      background-color: #a4a4a4;
+      cursor: not-allowed;
+    }
+
+    &:hover:not([disabled]) {
+      background-color: #5eb1e5;
+    }
+
+    &:active:not([disabled]) {
+      background-color: #77b8e1;
+    }
+  }
+}

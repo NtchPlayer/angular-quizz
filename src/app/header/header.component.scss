@@ -1,0 +1,21 @@
+.header-wrapper {
+  background-color: #3e3ea2;
+  color: #fff;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-link-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
