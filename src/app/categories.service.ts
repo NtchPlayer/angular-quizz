@@ -17,10 +17,13 @@ export class CategoriesService {
     })
   }
 
-  searchCategories(search: string) {
-    const searchClean = search.toLowerCase()
+  searchCategories(search?: string) {
+    let searchQuery = ''
+    if (search) {
+      searchQuery = `?name_like=${search.toLowerCase()}`
+    }
 
-    return this.http.get(`http://localhost:3000/categories?name_like=${searchClean}`).subscribe((categories: any) => {
+    return this.http.get(`http://localhost:3000/categories${searchQuery}`).subscribe((categories: any) => {
       this.categories = categories
     })
   }

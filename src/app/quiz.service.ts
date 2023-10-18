@@ -14,16 +14,16 @@ export class QuizService {
   total: number = 0
   result: number = 0
 
-  getQuestions() {
-    return this.http.get('http://localhost:3000/questions')
+  getQuestions(categoryID: number) {
+    return this.http.get(`http://localhost:3000/questions?categoryID=${categoryID}`)
   }
 
   checkAnswers(playerAnswers: any) {
     return this.http.get('http://localhost:3000/answers').subscribe((answers: any) => {
-      this.total = answers.length
 
       for (const [key, value] of Object.entries(playerAnswers)) {
         const answerOfQuestion = answers.find((el: any) => el.questionId === parseInt(key))
+        this.total++
         if (value === answerOfQuestion.value) {
           this.result++
         }

@@ -9,4 +9,5 @@ export class ButtonComponent {
   @Input() variation: string | undefined = 'primary'
   @Input() type: string | undefined
   @Input() disabled: boolean | undefined = false
+  @Input() iconStart: string | undefined
 }

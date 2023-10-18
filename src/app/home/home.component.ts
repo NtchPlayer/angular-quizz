@@ -20,6 +20,12 @@ export class HomeComponent implements OnInit {
   })
 
   performSearch () {
+    if (!this.searchForm.valid) return
     this.categoriesService.searchCategories(this.searchForm.value.search)
+  }
+
+  resetSearch () {
+    this.searchForm.reset()
+    this.performSearch()
   }
 }

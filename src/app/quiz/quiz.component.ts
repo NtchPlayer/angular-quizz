@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { QuizService } from '../quiz.service'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-quiz',
@@ -8,7 +9,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./quiz.component.scss']
 })
 export class QuizComponent implements OnInit {
-  constructor(private quizService: QuizService) {}
+  constructor(
+    private quizService: QuizService,
+    private route: ActivatedRoute
+  ) {}
 
   title = 'IFSCL Quiz'
   questions: any[] = []
@@ -20,7 +24,8 @@ export class QuizComponent implements OnInit {
   }
 
   getQuestion () {
-    this.quizService.getQuestions().subscribe((questions: any) => {
+    const categoryID: number = Number(this.route.snapshot.paramMap.get('id'));
+    this.quizService.getQuestions(categoryID).subscribe((questions: any) => {
       this.questions = questions
       for (let i = 0; i < questions.length; i++) {
         this.quizForm.addControl(i, new FormControl('', Validators.required))
