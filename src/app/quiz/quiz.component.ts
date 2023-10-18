@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { QuizService } from '../quiz.service'
+import { CategoriesService } from '../categories.service'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { ActivatedRoute } from '@angular/router'
 
@@ -11,13 +12,15 @@ import { ActivatedRoute } from '@angular/router'
 export class QuizComponent implements OnInit {
   constructor(
     private quizService: QuizService,
-    private route: ActivatedRoute
+    public categoriesService: CategoriesService,
+    private route: ActivatedRoute,
   ) {}
 
   title = 'IFSCL Quiz'
   questions: any[] = []
 
   quizForm: any = new FormGroup({})
+  categoryID: number = 0
 
   checkAnswer () {
     console.log(this.quizForm.value)
@@ -25,8 +28,7 @@ export class QuizComponent implements OnInit {
   }
 
   getQuestion () {
-    const categoryID: number = Number(this.route.snapshot.paramMap.get('id'));
-    this.quizService.getQuestions(categoryID).subscribe((questions: any) => {
+    this.quizService.getQuestions(this.categoryID).subscribe((questions: any) => {
       this.questions = questions
       for (let i = 0; i < questions.length; i++) {
         console.log(questions)
@@ -35,6 +37,8 @@ export class QuizComponent implements OnInit {
     })
   }
   ngOnInit() {
+    this.categoryID = Number(this.route.snapshot.paramMap.get('id'))
     this.getQuestion()
+    this.categoriesService.getCategory(this.categoryID)
   }
 }

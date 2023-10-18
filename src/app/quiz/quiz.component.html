@@ -1,5 +1,6 @@
 <main class="page-container">
   <h1 class="heading-1">{{ title }}</h1>
+  <h2>Catégorie: {{ categoriesService.currentCategory }}</h2>
   <form id="quiz-form" [formGroup]="quizForm" class="questions-container"  (submit)="checkAnswer()">
     <app-question
       *ngFor="let question of questions; index as i"

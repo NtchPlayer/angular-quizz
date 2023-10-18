@@ -10,10 +10,17 @@ export class CategoriesService {
   ) {}
 
   categories: any = []
+  currentCategory: string = ''
 
   getCategories() {
     return this.http.get('http://localhost:3000/categories').subscribe((categories: any) => {
       this.categories = categories
+    })
+  }
+
+  getCategory(id: number) {
+    return this.http.get(`http://localhost:3000/categories?id=${id}`).subscribe((categories: any) => {
+      this.currentCategory = categories[0].name
     })
   }
 

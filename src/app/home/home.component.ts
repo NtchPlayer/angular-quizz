@@ -26,6 +26,6 @@ export class HomeComponent implements OnInit {
 
   resetSearch () {
     this.searchForm.reset()
-    this.performSearch()
+    this.categoriesService.searchCategories(this.searchForm.value.search)
   }
 }
