@@ -1,9 +1,25 @@
 <main class="page-container">
   <h1 class="heading-1">Quiz IFSCL</h1>
   <p>Ce quiz à pour objectif de tester vos connaissance sur l'IFSCL, un fan-game sur basant sur l'univers de Code Lyoko.</p>
-  <p>
-    <a [routerLink]="['/quiz']" class="link-button">
-      Commencer le quiz
-    </a>
-  </p>
+  <hr class="hr">
+  <form id="search-form" [formGroup]="searchForm" class="search-container" (submit)="performSearch()">
+    <app-input-field name="search-input" type="search" label="Recherche" formControlName="search" placeholder="Version" />
+    <app-button type="submit">Rechercher</app-button>
+  </form>
+  <h2 class="heading-2">Catégories</h2>
+  <ul *ngIf="categoriesService.categories.length; else empty" class="categories-container">
+    <li *ngFor="let category of categoriesService.categories" class="category-container">
+      <a [routerLink]="'/quiz/'+category.id" class="category-link">
+        {{ category.name }}
+      </a>
+    </li>
+  </ul>
+  <ng-template #empty>
+    <p class="empty">Aucun catégorie n'a été trouvé</p>
+  </ng-template>
+<!--  <p>-->
+<!--    <a [routerLink]="['/quiz']" class="link-button">-->
+<!--      Commencer le quiz-->
+<!--    </a>-->
+<!--  </p>-->
 </main>

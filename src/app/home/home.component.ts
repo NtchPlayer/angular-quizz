@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
+import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { CategoriesService } from '../categories.service'
 
 @Component({
   selector: 'app-home',
@@ -7,20 +8,18 @@ import { HttpClient } from '@angular/common/http'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+  constructor(public categoriesService: CategoriesService) {}
 
   ngOnInit() {
-    this.http.get('http://localhost:3000/questions')
-      .subscribe((data) => {
-        this.questions = data
-      })
+    this.categoriesService.getCategories()
   }
 
-  title: string = 'IFSCL Quiz';
+  title: string = 'IFSCL Quiz'
+  searchForm: any = new FormGroup({
+    search: new FormControl('', [Validators.required])
+  })
 
-  questions: any = []
-
-  checkAnswer () {
-    console.log('test')
+  performSearch () {
+    this.categoriesService.searchCategories(this.searchForm.value.search)
   }
 }

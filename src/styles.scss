@@ -23,6 +23,11 @@ body{
   font-weight: 700;
 }
 
+.heading-2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
 .page-container {
   display: grid;
   gap: 24px;
@@ -52,3 +57,12 @@ body{
   }
 }
 
+.empty {
+  font-size: .825rem;
+  font-weight: 700;
+  color: #484848;
+}
+
+.hr {
+  color: #dadada;
+}

@@ -28,9 +28,6 @@ export class QuizService {
           this.result++
         }
       }
-
-      console.log(this.total)
-      console.log(this.result)
       this.router.navigateByUrl('/result')
     })
   }
