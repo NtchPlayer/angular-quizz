@@ -12,7 +12,7 @@
       [formControlName]="question.id"
     />
     <p class="quiz-send-button-container">
-      <app-button type="submit" [disabled]="!quizForm.valid">
+      <app-button type="submit" [disabled]="quizForm.invalid">
         Envoyer vos réponse
       </app-button>
     </p>

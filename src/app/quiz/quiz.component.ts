@@ -23,7 +23,6 @@ export class QuizComponent implements OnInit {
   categoryID: number = 0
 
   checkAnswer () {
-    console.log(this.quizForm.value)
     this.quizService.checkAnswers(this.quizForm.value)
   }
 
@@ -31,7 +30,6 @@ export class QuizComponent implements OnInit {
     this.quizService.getQuestions(this.categoryID).subscribe((questions: any) => {
       this.questions = questions
       for (let i = 0; i < questions.length; i++) {
-        console.log(questions)
         this.quizForm.addControl(questions[i].id, new FormControl('', Validators.required))
       }
     })

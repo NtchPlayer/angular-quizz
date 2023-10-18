@@ -21,6 +21,7 @@ import { SvgIconsComponent } from './shared/svg-icons/svg-icons.component';
 import { IconButtonComponent } from './shared/icon-button/icon-button.component';
 
 import { InlineSVGModule } from 'ng-inline-svg-2';
+import { ConvertTimePipe } from './shared/pipes/convert-time.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { InlineSVGModule } from 'ng-inline-svg-2';
     ResultComponent,
     SvgUseComponent,
     SvgIconsComponent,
-    IconButtonComponent
+    IconButtonComponent,
+    ConvertTimePipe
   ],
   imports: [
     BrowserModule,

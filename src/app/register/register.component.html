@@ -4,7 +4,8 @@
     <app-input-field name="register-username" placeholder="Xubeo" label="Nom d'utilisateur" formControlName="userName" />
     <app-input-field name="register-email" placeholder="example@email.com" label="Adresse mail" formControlName="email" type="email" />
     <app-input-field name="register-password" placeholder="password" label="Mot de passe" formControlName="password" type="password" />
-    <app-button type="submit" [disabled]="!registerForm.valid">
+    <p *ngIf="registerForm.errors" class="form-error">{{ registerForm.errors['containUserName'] }}</p>
+    <app-button type="submit" [disabled]="registerForm.invalid">
       S'inscrire
     </app-button>
   </form>

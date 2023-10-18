@@ -10,6 +10,8 @@
       [id]="i"
       [(selected)]="selected"
       (selectedChange)="propagateChange($event)"
-    ></app-checkbox>
+      (change)="setTimer()"
+    />
   </div>
+  <p *ngIf="answerDate">Vous avez répondu en {{ answerDate | convertTime }} secondes.</p>
 </article>

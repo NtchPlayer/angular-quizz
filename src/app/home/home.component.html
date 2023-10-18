@@ -5,7 +5,7 @@
   <form id="search-form" [formGroup]="searchForm" class="search-container" (submit)="performSearch()">
     <app-input-field name="search-input" type="search" label="Recherche" formControlName="search" placeholder="Version" />
     <app-button type="submit">Rechercher</app-button>
-    <app-button (click)="resetSearch()" [disabled]="!searchForm.valid">Réinitialiser</app-button>
+    <app-button (click)="resetSearch()" [disabled]="searchForm.invalid">Réinitialiser</app-button>
   </form>
   <h2 class="heading-2">Catégories</h2>
   <ul *ngIf="categoriesService.categories.length; else empty" class="categories-container">

@@ -20,6 +20,8 @@ export class QuestionComponent implements ControlValueAccessor {
   @Output() selectedChange = new EventEmitter<string | number>();
 
   selected: string | number = ''
+  startDate: number = new Date().getTime()
+  answerDate: any = undefined
 
   writeValue(value: any) {
     if (value !== undefined) {
@@ -34,4 +36,10 @@ export class QuestionComponent implements ControlValueAccessor {
   }
 
   registerOnTouched() {}
+
+  setTimer () {
+    if (!this.answerDate) {
+      this.answerDate = Math.abs(new Date().getTime() - this.startDate) / 1000
+    }
+  }
 }
