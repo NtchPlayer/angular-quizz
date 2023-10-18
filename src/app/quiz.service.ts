@@ -14,8 +14,8 @@ export class QuizService {
   total: number = 0
   result: number = 0
 
-  getQuestions() {
-    return this.http.get('http://localhost:3000/questions')
+  getQuestions(id: number) {
+    return this.http.get(`http://localhost:3000/questions?categoryID=${id}`)
   }
 
   checkAnswers(playerAnswers: any) {

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core'
-import { QuizService } from '../quiz.service'
-import { FormControl, FormGroup, Validators } from '@angular/forms'
+import {Component, OnInit} from '@angular/core'
+import {QuizService} from '../quiz.service'
+import {FormControl, FormGroup, Validators} from '@angular/forms'
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-quiz',
@@ -8,25 +9,33 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./quiz.component.scss']
 })
 export class QuizComponent implements OnInit {
-  constructor(private quizService: QuizService) {}
+  constructor(private quizService: QuizService
+    , private route: ActivatedRoute,
+  ) {
+  }
 
   title = 'IFSCL Quiz'
   questions: any[] = []
 
   quizForm: any = new FormGroup({})
 
-  checkAnswer () {
+  checkAnswer() {
     this.quizService.checkAnswers(this.quizForm.value)
   }
 
-  getQuestion () {
-    this.quizService.getQuestions().subscribe((questions: any) => {
-      this.questions = questions
-      for (let i = 0; i < questions.length; i++) {
+  getQuestion() {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.quizService.getQuestions(id).subscribe((allQuestions: any) => {
+      allQuestions.forEach((question: any) => {
+        question.categoryID = id
+        this.questions.push(question)
+      })
+      for (let i = 0; i < allQuestions.length; i++) {
         this.quizForm.addControl(i, new FormControl('', Validators.required))
       }
     })
   }
+
   ngOnInit() {
     this.getQuestion()
   }

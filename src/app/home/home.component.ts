@@ -22,4 +22,10 @@ export class HomeComponent implements OnInit {
   performSearch () {
     this.categoriesService.searchCategories(this.searchForm.value.search)
   }
+
+  clearForm () {
+    this.searchForm.reset()
+    this.searchForm.value.search = ''
+    this.categoriesService.getCategories()
+  }
 }

@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { InputFieldComponent } from './input-field/input-field.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { ResultComponent } from './result/result.component';
+import { CategoryButtonComponent } from './category-button/category-button.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ResultComponent } from './result/result.component';
     LoginComponent,
     InputFieldComponent,
     QuizComponent,
-    ResultComponent
+    ResultComponent,
+    CategoryButtonComponent
   ],
   imports: [
     BrowserModule,

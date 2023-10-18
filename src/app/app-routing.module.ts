@@ -16,12 +16,12 @@ const routes: Routes = [{
   path: 'login',
   component: LoginComponent
 }, {
-  path: 'quiz',
+  path: 'quiz/:id',
   component: QuizComponent
 }, {
   path: 'result',
   component: ResultComponent
-}]
+},]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

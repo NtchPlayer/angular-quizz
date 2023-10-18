@@ -5,14 +5,14 @@
   <form id="search-form" [formGroup]="searchForm" class="search-container" (submit)="performSearch()">
     <app-input-field name="search-input" type="search" label="Recherche" formControlName="search" placeholder="Version" />
     <app-button type="submit">Rechercher</app-button>
+    <app-button *ngIf="searchForm.value.search !== '' || categoriesService.categories.length !== 3" (click)="clearForm()">Clear</app-button>
   </form>
   <h2 class="heading-2">Catégories</h2>
   <ul *ngIf="categoriesService.categories.length; else empty" class="categories-container">
-    <li *ngFor="let category of categoriesService.categories" class="category-container">
-      <a [routerLink]="'/quiz/'+category.id" class="category-link">
-        {{ category.name }}
-      </a>
-    </li>
+    <app-category-button
+      *ngFor="let category of categoriesService.categories"
+      [category]="category"
+     ></app-category-button>
   </ul>
   <ng-template #empty>
     <p class="empty">Aucun catégorie n'a été trouvé</p>
