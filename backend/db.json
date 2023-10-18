@@ -1,6 +1,7 @@
 {
   "questions": [
     {
+      "id": 0,
       "name": "virtualisation",
       "title": "Combient de personnages peuvent être virtualisé ?",
       "categoryID": 2,
@@ -24,6 +25,7 @@
       ]
     },
     {
+      "id": 1,
       "title": "Quel est la première version de l'IFSCL sous Unity ?",
       "name": "first-version",
       "categoryID": 1,
@@ -47,6 +49,7 @@
       ]
     },
     {
+      "id": 2,
       "title": "Quel territoire possède l'identifiant numéro 1 ?",
       "name": "sector-id",
       "categoryID": 1,
@@ -70,6 +73,7 @@
       ]
     },
     {
+      "id": 3,
       "title": "Dans quelle version a été ajouté la première Immu's Room ?",
       "name": "immu-room",
       "categoryID": 1,
@@ -93,6 +97,7 @@
       ]
     },
     {
+      "id": 4,
       "title": "Quel commande permet de sélectionner une tour sur le superscan",
       "name": "superscan",
       "categoryID": 3,

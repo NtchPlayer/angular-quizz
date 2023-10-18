@@ -8,7 +8,7 @@
       [answers]="question.answers"
       [answer]="question.answer"
       [id]="i"
-      [formControlName]="i"
+      [formControlName]="question.id"
     />
     <p class="quiz-send-button-container">
       <app-button type="submit" [disabled]="!quizForm.valid">

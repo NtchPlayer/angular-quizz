@@ -19,6 +19,8 @@ export class QuizService {
   }
 
   checkAnswers(playerAnswers: any) {
+    this.total = 0
+    this.result = 0
     return this.http.get('http://localhost:3000/answers').subscribe((answers: any) => {
 
       for (const [key, value] of Object.entries(playerAnswers)) {
